@@ -180,5 +180,4 @@ summary_text = f"""### Analiza Klasyfikacji Emocji - WESAD Dataset
 - Agregacja: amusement + stress → emotion
 - Segmentacja: sliding window (5s okna, 50% overlap)
 """
-st.markdown(summary_text) 
-# cały kod streamlit
+st.markdown(summary_text)
