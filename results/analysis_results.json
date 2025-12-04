@@ -1,74 +1,186 @@
 {
-    "RandomForest": {
-        "accuracy": 0.85,
-        "balanced_accuracy": 0.83,
-        "macro_f1": 0.82,
-        "confusion_matrix": [
+    "data_info": {
+        "n_train_before_smote": 82,
+        "n_train_after_smote": 108,
+        "n_test": 41,
+        "n_features": 60,
+        "n_classes": 2,
+        "classes": [
+            "baseline",
+            "emotion"
+        ]
+    },
+    "label_encoder_mapping": {
+        "baseline": 0,
+        "emotion": 1
+    },
+    "class_distribution_before_smote": {
+        "baseline": 54,
+        "emotion": 28
+    },
+    "class_distribution_after_smote": {
+        "baseline": 54,
+        "emotion": 54
+    },
+    "class_distribution_test": {
+        "baseline": 26,
+        "emotion": 15
+    },
+    "model_metrics": {
+        "LogisticRegression": {
+            "accuracy": 0.8048780487804879,
+            "balanced_accuracy": 0.8179487179487179,
+            "macro_f1": 0.7990196078431373
+        },
+        "RandomForest": {
+            "accuracy": 0.6829268292682927,
+            "balanced_accuracy": 0.6230769230769231,
+            "macro_f1": 0.6259649122807017
+        },
+        "XGBoost": {
+            "accuracy": 0.7073170731707317,
+            "balanced_accuracy": 0.6282051282051282,
+            "macro_f1": 0.6272727272727273
+        },
+        "SVM": {
+            "accuracy": 0.6585365853658537,
+            "balanced_accuracy": 0.617948717948718,
+            "macro_f1": 0.6203703703703703
+        },
+        "Ensemble": {
+            "accuracy": 0.6829268292682927,
+            "balanced_accuracy": 0.7217948717948718,
+            "macro_f1": 0.6821705426356589
+        }
+    },
+    "confusion_matrices": {
+        "LogisticRegression": [
             [
-                30,
-                2,
-                1
+                20,
+                6
             ],
             [
-                3,
-                25,
+                2,
+                13
+            ]
+        ],
+        "RandomForest": [
+            [
+                22,
+                4
+            ],
+            [
+                9,
+                6
+            ]
+        ],
+        "XGBoost": [
+            [
+                24,
                 2
             ],
             [
-                0,
-                1,
-                28
+                10,
+                5
             ]
         ],
-        "classification_report": {
-            "ClassA": {
-                "precision": 0.91,
-                "recall": 0.9
+        "SVM": [
+            [
+                20,
+                6
+            ],
+            [
+                8,
+                7
+            ]
+        ],
+        "Ensemble": [
+            [
+                15,
+                11
+            ],
+            [
+                2,
+                13
+            ]
+        ]
+    },
+    "per_class_metrics": {
+        "LogisticRegression": {
+            "baseline": {
+                "precision": 0.9090909090909091,
+                "recall": 0.7692307692307693,
+                "f1_score": 0.8333333333333334,
+                "support": 26
             },
-            "ClassB": {
-                "precision": 0.88,
-                "recall": 0.83
+            "emotion": {
+                "precision": 0.6842105263157895,
+                "recall": 0.8666666666666667,
+                "f1_score": 0.7647058823529411,
+                "support": 15
+            }
+        },
+        "RandomForest": {
+            "baseline": {
+                "precision": 0.7096774193548387,
+                "recall": 0.8461538461538461,
+                "f1_score": 0.7719298245614035,
+                "support": 26
             },
-            "ClassC": {
-                "precision": 0.9,
-                "recall": 0.93
+            "emotion": {
+                "precision": 0.6,
+                "recall": 0.4,
+                "f1_score": 0.48,
+                "support": 15
+            }
+        },
+        "XGBoost": {
+            "baseline": {
+                "precision": 0.7058823529411765,
+                "recall": 0.9230769230769231,
+                "f1_score": 0.8,
+                "support": 26
+            },
+            "emotion": {
+                "precision": 0.7142857142857143,
+                "recall": 0.3333333333333333,
+                "f1_score": 0.45454545454545453,
+                "support": 15
+            }
+        },
+        "SVM": {
+            "baseline": {
+                "precision": 0.7142857142857143,
+                "recall": 0.7692307692307693,
+                "f1_score": 0.7407407407407407,
+                "support": 26
+            },
+            "emotion": {
+                "precision": 0.5384615384615384,
+                "recall": 0.4666666666666667,
+                "f1_score": 0.5,
+                "support": 15
+            }
+        },
+        "Ensemble": {
+            "baseline": {
+                "precision": 0.8823529411764706,
+                "recall": 0.5769230769230769,
+                "f1_score": 0.6976744186046512,
+                "support": 26
+            },
+            "emotion": {
+                "precision": 0.5416666666666666,
+                "recall": 0.8666666666666667,
+                "f1_score": 0.6666666666666666,
+                "support": 15
             }
         }
     },
-    "XGBoost": {
-        "accuracy": 0.8,
-        "balanced_accuracy": 0.78,
-        "macro_f1": 0.79,
-        "confusion_matrix": [
-            [
-                28,
-                4,
-                1
-            ],
-            [
-                5,
-                22,
-                3
-            ],
-            [
-                1,
-                2,
-                26
-            ]
-        ],
-        "classification_report": {
-            "ClassA": {
-                "precision": 0.85,
-                "recall": 0.88
-            },
-            "ClassB": {
-                "precision": 0.81,
-                "recall": 0.73
-            },
-            "ClassC": {
-                "precision": 0.89,
-                "recall": 0.87
-            }
-        }
+    "best_model": {
+        "name": "LogisticRegression",
+        "accuracy": 0.8048780487804879,
+        "balanced_accuracy": 0.8179487179487179,
+        "macro_f1": 0.7990196078431373
     }
 }
