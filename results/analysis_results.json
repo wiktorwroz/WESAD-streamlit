@@ -1,0 +1,74 @@
+{
+    "RandomForest": {
+        "accuracy": 0.85,
+        "balanced_accuracy": 0.83,
+        "macro_f1": 0.82,
+        "confusion_matrix": [
+            [
+                30,
+                2,
+                1
+            ],
+            [
+                3,
+                25,
+                2
+            ],
+            [
+                0,
+                1,
+                28
+            ]
+        ],
+        "classification_report": {
+            "ClassA": {
+                "precision": 0.91,
+                "recall": 0.9
+            },
+            "ClassB": {
+                "precision": 0.88,
+                "recall": 0.83
+            },
+            "ClassC": {
+                "precision": 0.9,
+                "recall": 0.93
+            }
+        }
+    },
+    "XGBoost": {
+        "accuracy": 0.8,
+        "balanced_accuracy": 0.78,
+        "macro_f1": 0.79,
+        "confusion_matrix": [
+            [
+                28,
+                4,
+                1
+            ],
+            [
+                5,
+                22,
+                3
+            ],
+            [
+                1,
+                2,
+                26
+            ]
+        ],
+        "classification_report": {
+            "ClassA": {
+                "precision": 0.85,
+                "recall": 0.88
+            },
+            "ClassB": {
+                "precision": 0.81,
+                "recall": 0.73
+            },
+            "ClassC": {
+                "precision": 0.89,
+                "recall": 0.87
+            }
+        }
+    }
+}

@@ -1,0 +1,2 @@
+ 
+# cały kod streamlit
