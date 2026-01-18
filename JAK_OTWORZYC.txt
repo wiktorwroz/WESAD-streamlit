@@ -1,0 +1,95 @@
+═══════════════════════════════════════════════════════════════
+  JAK OTWORZYĆ APLIKACJĘ STREAMLIT - PROSTA INSTRUKCJA
+═══════════════════════════════════════════════════════════════
+
+📦 KROK 1: ROZPAKUJ PLIK ZIP
+───────────────────────────────────────────────────────────────
+1. Kliknij dwukrotnie na plik: wesad_streamlit_package.zip
+2. Rozpakuj go do dowolnego folderu (np. Pulpit, Dokumenty)
+3. Otwórz folder: wesad_streamlit_package
+
+📦 KROK 2: ZAINSTALUJ BIBLIOTEKI
+───────────────────────────────────────────────────────────────
+1. Otwórz Terminal (Mac) lub PowerShell/CMD (Windows)
+
+   Mac:
+   - Naciśnij Cmd + Spacja
+   - Wpisz "Terminal" i naciśnij Enter
+
+   Windows:
+   - Naciśnij Win + R
+   - Wpisz "cmd" i naciśnij Enter
+
+2. Przejdź do folderu z aplikacją:
+
+   Mac/Linux:
+   cd ~/Desktop/wesad_streamlit_package
+   (lub gdzie rozpakowałeś)
+
+   Windows:
+   cd C:\Users\Twoje_Imie\Desktop\wesad_streamlit_package
+   (lub gdzie rozpakowałeś)
+
+3. Zainstaluj biblioteki:
+
+   Mac/Linux:
+   pip3 install -r requirements.txt
+
+   Windows:
+   pip install -r requirements.txt
+
+   Jeśli nie działa, spróbuj:
+   python -m pip install -r requirements.txt
+
+📦 KROK 3: URUCHOM APLIKACJĘ
+───────────────────────────────────────────────────────────────
+W Terminalu (w tym samym folderze) wpisz:
+
+   streamlit run wesad_full_pro_streamlit_app.py
+
+Aplikacja automatycznie otworzy się w przeglądarce!
+
+🌐 ADRES: http://localhost:8501
+
+═══════════════════════════════════════════════════════════════
+  ROZWIĄZYWANIE PROBLEMÓW
+═══════════════════════════════════════════════════════════════
+
+❌ Problem: "command not found: streamlit"
+───────────────────────────────────────────────────────────────
+Rozwiązanie:
+   pip3 install streamlit
+   (lub: pip install streamlit)
+
+❌ Problem: "No module named 'pandas'"
+───────────────────────────────────────────────────────────────
+Rozwiązanie:
+   pip3 install pandas numpy scikit-learn matplotlib seaborn streamlit
+   (lub: pip install pandas numpy scikit-learn matplotlib seaborn streamlit)
+
+❌ Problem: "File not found: wesad_features_full.csv"
+───────────────────────────────────────────────────────────────
+Rozwiązanie:
+   - Upewnij się, że jesteś w folderze: wesad_streamlit_package
+   - Sprawdź czy plik wesad_features_full.csv jest w tym folderze
+   - W Terminalu wpisz: ls (Mac) lub dir (Windows)
+
+❌ Problem: Port 8501 zajęty
+───────────────────────────────────────────────────────────────
+Rozwiązanie:
+   streamlit run wesad_full_pro_streamlit_app.py --server.port 8502
+
+═══════════════════════════════════════════════════════════════
+  SZYBKA WERSJA (COPY-PASTE)
+═══════════════════════════════════════════════════════════════
+
+1. Rozpakuj ZIP
+2. Otwórz Terminal w folderze z aplikacją
+3. Wklej i naciśnij Enter:
+
+   pip3 install -r requirements.txt && streamlit run wesad_full_pro_streamlit_app.py
+
+   (lub na Windows: pip install -r requirements.txt && streamlit run wesad_full_pro_streamlit_app.py)
+
+═══════════════════════════════════════════════════════════════
+

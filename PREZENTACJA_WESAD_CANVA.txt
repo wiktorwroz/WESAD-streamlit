@@ -1,0 +1,201 @@
+PREZENTACJA O WESAD - TEKST DO CANVA
+=====================================
+
+SLIDE 1: TYTUŁ
+--------------
+Analiza Regulacji Emocjonalnej
+na podstawie sygnałów fizjologicznych
+WESAD Dataset
+
+Katarzyna Magdziarz
+
+SLIDE 2: CO TO JEST WESAD?
+--------------------------
+WESAD = Wearable Stress and Affect Detection
+
+• Dataset zawierający sygnały fizjologiczne z czujników noszonych na nadgarstku
+• 15 uczestników (S2-S17)
+• 3 stany emocjonalne: baseline, stress, amusement
+• Sygnały: EDA, BVP, TEMP, ACC
+• Częstotliwość próbkowania: 4-64 Hz
+
+SLIDE 3: CEL BADANIA
+--------------------
+Analiza regulacji emocjonalnej na podstawie:
+
+• EDA (Electrodermal Activity) - przewodnictwo skóry
+• BVP (Blood Volume Pulse) - puls, HRV
+• TEMP (Temperature) - temperatura skóry
+
+Cel: Klasyfikacja poziomu regulacji emocjonalnej
+(słaba / umiarkowana / dobra)
+
+SLIDE 4: METODOLOGIA - SYGNAŁY
+-------------------------------
+Przetwarzanie sygnałów:
+
+EDA (4 Hz):
+• Filtracja low-pass (1 Hz)
+• Detekcja reakcji skórno-galwanicznych (SCR)
+• Ekstrakcja: amplituda, czas trwania, decay rate
+
+BVP (64 Hz):
+• Filtracja band-pass (0.5-8 Hz)
+• Analiza HRV: RMSSD, SDNN, pNN50
+• Częstotliwość tętna
+
+TEMP (4 Hz):
+• Baseline correction
+• Średnia, odchylenie standardowe
+• Trendy czasowe
+
+SLIDE 5: EKSTRAKCJA CECH
+------------------------
+Cechy ekstrahowane dla każdego sygnału:
+
+EDA:
+• Peak amplitude, duration, decay rate
+• AUC (Area Under Curve)
+• Liczba reakcji w oknie czasowym
+
+BVP/HRV:
+• RMSSD, SDNN, pNN50
+• Mean HR, HRV frequency domain
+• Variability metrics
+
+TEMP:
+• Mean, std, min, max
+• Rate of change
+• Baseline deviation
+
+SLIDE 6: PRZYGOTOWANIE DANYCH
+------------------------------
+• 6 uczestników (S2-S7)
+• Agregacja cech per subject
+• Klasyfikacja regulacji emocjonalnej:
+  - Tercje na podstawie kombinacji cech
+  - Słaba / Umiarkowana / Dobra regulacja
+• Usunięcie NaN, wypełnienie medianą
+• SMOTE dla balansowania klas (train set)
+• StandardScaler dla normalizacji cech
+
+SLIDE 7: MODELE ML
+------------------
+Użyte klasyfikatory:
+
+• Random Forest (500 drzew)
+• Gradient Boosting
+• Extra Trees
+
+Walidacja:
+• LOSO Cross-Validation (Leave-One-Subject-Out)
+• SMOTE dla balansowania klas
+• StandardScaler dla normalizacji
+
+SLIDE 8: WYNIKI - METRYKI
+-------------------------
+Średnie wyniki z LOSO CV (6 uczestników):
+
+Random Forest:
+• Accuracy: [wstaw z notebooka - all_results]
+• F1-Score: [wstaw z notebooka]
+• ROC-AUC: [wstaw z notebooka]
+
+Gradient Boosting:
+• Accuracy: [wstaw z notebooka]
+• F1-Score: [wstaw z notebooka]
+• ROC-AUC: [wstaw z notebooka]
+
+Extra Trees:
+• Accuracy: [wstaw z notebooka]
+• F1-Score: [wstaw z notebooka]
+• ROC-AUC: [wstaw z notebooka]
+
+💡 Gdzie znaleźć wyniki:
+Uruchom komórkę KROK 7 w notebooku i skopiuj wyniki z sekcji
+"PODSUMOWANIE WYNIKÓW LOSO CV"
+
+SLIDE 9: NAJWAŻNIEJSZE CECHY
+-----------------------------
+Top cechy wpływające na klasyfikację:
+
+1. EDA decay rate - szybkość powrotu do baseline
+2. EDA peak amplitude - intensywność reakcji
+3. HRV RMSSD - zmienność rytmu serca
+4. EDA duration - czas trwania reakcji
+5. TEMP variability - zmienność temperatury
+
+SLIDE 10: WNIOSKI
+-----------------
+• Sygnały fizjologiczne pozwalają na klasyfikację regulacji emocjonalnej
+• EDA i HRV są kluczowymi wskaźnikami
+• LOSO CV zapewnia realistyczną walidację
+• SMOTE poprawia wyniki przy niezbalansowanych klasach
+• Modele ensemble (RF, GB, ET) osiągają dobre wyniki
+
+SLIDE 11: ZASTOSOWANIA
+----------------------
+Potencjalne zastosowania:
+
+• Monitoring stresu w czasie rzeczywistym
+• Aplikacje wellness i zdrowia psychicznego
+• Badania nad regulacją emocjonalną
+• Personalizowane interwencje terapeutyczne
+• Wearable devices dla zdrowia
+
+SLIDE 12: DZIĘKUJĘ ZA UWAGĘ
+---------------------------
+Pytania?
+
+Katarzyna Magdziarz
+
+GitHub: github.com/wiktorwroz/WESAD-streamlit
+
+=====================================
+INSTRUKCJA DLA CANVA:
+1. Otwórz Canva.com
+2. Wybierz "Prezentacja 16:9"
+3. Dla każdego slajdu:
+   - Kliknij "Dodaj slajd"
+   - Wybierz szablon
+   - Skopiuj treść z powyższego tekstu
+   - Wklej i dostosuj design
+4. Dodaj wykresy z notebooków jako obrazy
+
+=====================================
+PROPOZYCJA METRYK DO WSTAWIENIA:
+=====================================
+
+SLIDE 8 - WYNIKI:
+-----------------
+Aby wstawić rzeczywiste wyniki:
+
+1. Otwórz notebook: wesad_full_pro_analysis.ipynb
+2. Uruchom komórkę KROK 7 (LOSO Cross-Validation)
+3. Znajdź sekcję "PODSUMOWANIE WYNIKÓW LOSO CV"
+4. Skopiuj wartości z tabeli:
+   - accuracy (mean)
+   - f1_score (mean)
+   - roc_auc (mean)
+5. Wstaw do slajdu 8 w formacie:
+   • Accuracy: 0.XXX
+   • F1-Score: 0.XXX
+   • ROC-AUC: 0.XXX
+
+SLIDE 9 - NAJWAŻNIEJSZE CECHY:
+-------------------------------
+Aby znaleźć top cechy:
+
+1. Uruchom komórkę KROK 8 (SHAP Values) w notebooku
+2. Sprawdź sekcję "Feature Importance"
+3. Skopiuj top 5-10 cech
+4. Wstaw do slajdu 9
+
+DODATKOWE INFORMACJE DO SLIDÓW:
+--------------------------------
+SLIDE 2: Możesz dodać wykres rozkładu uczestników
+SLIDE 4: Możesz dodać przykładowe wykresy sygnałów EDA/BVP/TEMP
+SLIDE 5: Możesz dodać tabelę z listą wszystkich cech
+SLIDE 8: Możesz dodać wykres porównujący modele (bar chart)
+SLIDE 9: Możesz dodać wykres feature importance (bar chart)
+

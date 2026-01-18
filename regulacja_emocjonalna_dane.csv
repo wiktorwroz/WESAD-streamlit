@@ -1,0 +1,11 @@
+subject,signal,condition,latency_s,peak_amplitude,duration_s,slope,decay,auc,interpretacja
+S2,EDA,stress,2.5,0.15,8.3,0.06,0.02,1.25,umiarkowana_reakcja
+S2,BVP,stress,1.8,0.25,12.5,0.14,0.03,3.12,mocny_puls
+S2,TEMP,stress,5.2,-0.08,15.0,-0.015,0.01,0.95,spada
+S3,EDA,stress,3.8,0.08,6.5,0.02,0.015,0.52,slaba_reakcja
+S3,BVP,stress,2.1,0.22,11.2,0.10,0.025,2.46,mocny_puls
+S3,TEMP,stress,4.5,-0.06,13.8,-0.013,0.008,0.83,spada
+S4,EDA,stress,1.2,0.35,18.5,0.29,0.01,6.48,bardzo_mocny_pik
+S4,BVP,stress,0.9,0.42,20.3,0.47,0.005,8.52,bardzo_mocny_pik
+S4,TEMP,stress,3.1,0.12,22.0,0.039,0.002,2.64,rosnie
+
